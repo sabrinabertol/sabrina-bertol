@@ -23,9 +23,7 @@ function setup() {
   }
 
   // Microphone input
-   setTimeout(() => {
-    mic = new p5.AudioIn();
-  }, 50);
+  mic = new p5.AudioIn();
 }
 
 function draw() {
