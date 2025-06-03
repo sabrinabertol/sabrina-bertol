@@ -21,7 +21,6 @@ function setup() {
 
   // Microphone input
   mic = new p5.AudioIn();
-  mic.start();
 }
 
         function draw() {
