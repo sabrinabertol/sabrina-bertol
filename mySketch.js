@@ -1,6 +1,6 @@
 // This code uses amplitude to detect "loudness"
 let mic;
-let cols:
+let cols;
 let rows;
 let grid = [];
 let amplitude = 0;
