@@ -23,13 +23,18 @@ function setup() {
   }
 
   // Microphone input
-  mic = new p5.AudioIn();
+   setTimeout(() => {
+    mic = new p5.AudioIn();
+  }, 100);
 }
 
 function draw() {
   background(0);
+  pixelDensity(1); // Matches OpenProcessing default
+  noSmooth(); // Sometimes helps with performance
+  console.log("Mic level:", mic.getLevel()); // Check if this shows values > 0
   amplitude = mic.getLevel(); // Get the sound level
-
+  
   // Loop through grid and display characters
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
