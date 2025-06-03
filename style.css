@@ -1,78 +1,64 @@
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            font-family: Space Grotesk;
-        }
-        
-        #p5-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }
-        
-        #description {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-			text-align: center;
-            font-size: 14px;
-            line-height: 1.2;
-            max-width: 500px;
-            z-index: 1000;
-			margin: 10px 0;
-        }
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Space Grotesk";
+}
 
-        a {
-			font-family: Space Grotesk;
-            color: inherit;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            color: #ccc;
-        }
-        
-        #mic-popup {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.9);
-            color: white;
-            padding: 15px 20px;
-            text-align: left;
-            z-index: 2000;
-            max-width: 300px;
-            font-size: 12px;
-        }
-        
-        #mic-popup h2 {
-            margin: 0 0 8px 0;
-            font-size: 14px;
-        }
-        
-        #mic-popup p {
-            margin: 5px 0;
-            font-size: 11px;
-        }
-        
-        #mic-popup button {
-			font-family: Space Grotesk;
-            background: white;
-            color: black;
-            border: none;
-            padding: 6px 12px;
-            margin-right: 5px;
-			margin-top: 10px;
-            cursor: pointer;
-            font-size: 11px;
-        }
-        
-        #mic-popup button:hover {
-            background: #ccc;
-        }
-    
+.p5canvas {
+  z-index: 1;
+}
+
+#description {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 600px;
+  z-index: 1000;
+  margin: 10px 0;
+}
+
+#mic-popup {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  z-index: 2000;
+  max-width: 300px;
+  font-size: 12px;
+}
+
+#mic-popup h2 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+}
+
+#mic-popup p {
+  margin: 5px 0;
+  font-size: 11px;
+}
+
+#mic-popup button {
+  font-family: inherit;
+  background: white;
+  color: black;
+  border: none;
+  padding: 6px 12px;
+  margin-right: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+#mic-popup button:hover {
+  background: #ccc;
+}
