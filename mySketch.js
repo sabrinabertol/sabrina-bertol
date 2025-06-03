@@ -87,3 +87,13 @@ function randomAsciiChar() {
 function closeMicPopup() {
   document.getElementById("mic-popup").style.display = "none";
 }
+
+function startMic() {
+  try {
+    mic.start();
+    closeMicPopup();
+  } catch(e) {
+    console.log("Microphone access denied or failed");
+    closeMicPopup();
+  }
+}
