@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.11.7/lib/p5.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.11.7/lib/addons/p5.sound.min.js"></script>
+	<script src="mySketch.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>   
+	<div id="mic-popup">
+        <h2>This page reacts to sound!</h2>
+        <p>Nothing is ever recorded 
+            <br>(You can check the code in my <a href="https://www.w3schools.com/" target="_blank">GitHub</a>)</p>
+        <button onclick="mic.start(), closeMicPopup()">Activate Microphone</button>
+        <button onclick="closeMicPopup()">Skip</button>
+    </div>
+    
+    <div id="description">
+        <p>
+            Sabrina Bertol is a multidisciplinary artist from Brasilia-BR, based in Lisbon-PT. She likes: drawing, electronic music production, djing, coding, designing and building web-sites and many other things. Get in touch!
+        </p>
+    </div>
+</body>
+
+</html>
