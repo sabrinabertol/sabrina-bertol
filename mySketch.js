@@ -28,7 +28,7 @@ function setup() {
 
 function draw() {
   background(0);
-  amplitude = mic.getLevel() * 2; // Get the sound level
+  amplitude = mic.getLevel(); // Get the sound level
 
   // Loop through grid and display characters
   for (let i = 0; i < cols; i++) {
@@ -40,7 +40,7 @@ function draw() {
       fill(110, 110, 110);
 
       // Check if sound level exceeds a threshold
-      if (amplitude > 0.01) {
+      if (amplitude > 0.02) {
         // Geometric movement: shift position slightly based on sound amplitude
         let offsetX = map(
           noise(x, frameCount * 0.01),
@@ -70,7 +70,7 @@ function draw() {
       text(grid[i][j], x, y);
 
       // Randomly change character based on sound amplitude, I guess it picks up even small noises
-      if (random() < amplitude) {
+      if (random() < amplitude * 0.5) {
         grid[i][j] = randomAsciiChar();
       }
     }
