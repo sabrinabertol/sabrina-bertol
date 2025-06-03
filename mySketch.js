@@ -1,8 +1,10 @@
-let cols, rows;
-let cellSize = 10;
-let grid = [];
+// This code uses amplitude to detect "loudness"
 let mic;
+let cols:
+let rows;
+let grid = [];
 let amplitude = 0;
+let cellSize = 10;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
