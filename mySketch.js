@@ -3,13 +3,12 @@ let mic;
 let cols;
 let rows;
 let grid = [];
-let amplitude = 0;
+let amplitude;
 let cellSize = 10;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   textSize(cellSize);
-  textFont("Space Grotesk");
   textAlign(CENTER, CENTER);
   cols = floor(width / cellSize);
   rows = floor(height / cellSize);
@@ -28,36 +27,22 @@ function setup() {
 
 function draw() {
   background(0);
-  pixelDensity(1); // Matches OpenProcessing default
   amplitude = mic.getLevel(); // Get the sound level
-  console.log("Mic level:", mic.getLevel()); // Check if this shows values > 0
   
   // Loop through grid and display characters
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
       let x = i * cellSize + cellSize / 2;
       let y = j * cellSize + cellSize / 2;
-
+      
       // Default color
-      fill(110, 110, 110);
+      fill(255);
 
       // Check if sound level exceeds a threshold
       if (amplitude > 0.02) {
         // Geometric movement: shift position slightly based on sound amplitude
-        let offsetX = map(
-          noise(x, frameCount * 0.01),
-          0,
-          1,
-          -amplitude * 100,
-          amplitude * 100
-        );
-        let offsetY = map(
-          noise(y, frameCount * 0.01),
-          0,
-          1,
-          -amplitude * 100,
-          amplitude * 100
-        );
+        let offsetX = map(noise(x, frameCount * 0.01), 0, 1, -amplitude * 100, amplitude * 100);
+        let offsetY = map(noise(y, frameCount * 0.01), 0, 1, -amplitude * 100, amplitude * 100);
 
         // Change position and color based on amplitude
         x += offsetX;
@@ -72,7 +57,7 @@ function draw() {
       text(grid[i][j], x, y);
 
       // Randomly change character based on sound amplitude, I guess it picks up even small noises
-      if (random() < amplitude * 0.5) {
+      if (random() < amplitude) {
         grid[i][j] = randomAsciiChar();
       }
     }
@@ -91,11 +76,6 @@ function closeMicPopup() {
 }
 
 function startMic() {
-  try {
-    mic.start();
-    closeMicPopup();
-  } catch(e) {
-    console.log("Microphone access denied or failed");
-    closeMicPopup();
-  }
+  mic.start();
+  closeMicPopup();
 }
